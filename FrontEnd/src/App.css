@@ -1,0 +1,45 @@
+body {
+  margin:0;
+}
+
+.header {
+  display:grid;
+  background-color: pink;
+  grid-template-columns: 20% auto 15% 15%;
+  grid-template-rows: 10vh;
+  align-items: stretch;
+}
+
+.A {
+
+  text-align: center;
+  padding: 3vh
+}
+
+.B {
+  grid-column: 3/ 4;
+  grid-row: 1/2;
+
+  text-align: center;
+  padding: 3vh
+}
+
+.C {
+  grid-column: 4/ 5;
+  grid-row: 1/2;
+
+  text-align: center;
+  padding: 3vh
+}
+
+.SearchField {
+  text-align:center;
+}
+
+.Result {
+  text-align:center;
+  border: 1px solid black;
+  margin: 20px 30px;
+  height: 50vh;
+}
+
