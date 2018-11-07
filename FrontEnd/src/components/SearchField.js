@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {findBooks} from '../actions/bookAction'
 
 class SearchField extends Component {
+
+  findBook = () =>{
+    try {
+      console.log('Finding books')
+      this.props.findBook()
+    }
+    catch (err) {
+      console.log(err)
+    }  
+    return
+  }
+
   render() {
     return (
       <div className="SearchField">
@@ -15,9 +29,21 @@ class SearchField extends Component {
     );
   }
 
-  findBook() {
-      console.log('Finding books')
+
+}
+
+const mapStateToProps = (state) => {
+  return {
+    books: state.books
   }
 }
 
-export default SearchField;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    findBook: () => {
+      dispatch(findBooks())
+    }
+  }
+}
+
+export default  connect(mapStateToProps,mapDispatchToProps)(SearchField);
